@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group 'eu.raidersheaven.rhsignitem'
+version '1.0-SNAPSHOT'
+
+libsDirName = "E:/Development/server/plugins"
+compileJava.options.encoding = "UTF-8"
+
+sourceCompatibility = targetCompatibility = 1.8
+
+repositories {
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+
+    mavenCentral()
+    mavenLocal()
+}
+
+configurations {
+    exportedLibs
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
+
+    configurations.implementation.extendsFrom(configurations.exportedLibs)
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    from {
+        configurations.exportedLibs.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

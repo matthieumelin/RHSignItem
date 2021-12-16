@@ -1,0 +1,5 @@
+name: RHSignItem
+version: 1.0
+api-version: 1.18
+author: GeekLegend
+main: eu.raidersheaven.rhsignitem.RHSignItem

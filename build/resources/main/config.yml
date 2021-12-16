@@ -1,0 +1,32 @@
+messages:
+  prefix: '&8[&9&lRHSignItem&8]'
+  sign:
+    usage:
+      - '/sign <text>'
+      - '/sign delete'
+      - '/sign lock'
+      - '/sign unlock'
+      - '/sign reload'
+      - '/renameitem <text>'
+    reload: '%prefix% &7The configuration has been refreshed.'
+    no-permission: "%prefix% &7You don't have the permission for that."
+    no-item-in-main-hand: "%prefix% &7You have no item in your hand."
+    item-blacklisted: "%prefix% &7This item is blacklisted."
+    already-locked: '%prefix% &7This item is already locked by %player%'
+commands:
+  admin:
+    permission: 'RHSignItem.*'
+  sign:
+    permission: 'RHSignItem.sign'
+  unsign:
+    permission: 'RHSignItem.unsign'
+  reload:
+    permission: 'RHSignItem.reload'
+  lock:
+    permission: 'RHSignItem.lockitem'
+  unlock:
+    permission: 'RHSignItem.unlockitem'
+  renameitem:
+    permission: 'RHSignItem.renameitem'
+items-blacklist:
+  - 'bedrock'
