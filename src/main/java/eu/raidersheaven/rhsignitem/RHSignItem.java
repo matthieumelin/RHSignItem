@@ -18,11 +18,6 @@ public class RHSignItem extends JavaPlugin {
         new CommandManager();
     }
 
-    @Override
-    public void onDisable() {
-        instance = null;
-    }
-
     /**
      * Get plugin instance
      * @return Plugin instance

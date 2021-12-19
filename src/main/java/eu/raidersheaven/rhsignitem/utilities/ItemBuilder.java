@@ -24,7 +24,7 @@ public class ItemBuilder {
 
     private ItemStack item;
     private ItemMeta meta;
-    private Material material = Material.STONE;
+    private Material material;
     private int amount = 1;
     private MaterialData data;
     private short damage = 0;
@@ -145,6 +145,10 @@ public class ItemBuilder {
     public ItemBuilder data(MaterialData data) {
         Validate.notNull(data, "The Data is null.");
         this.data = data;
+        return this;
+    }
+
+    public ItemBuilder glow() {
         return this;
     }
 
@@ -307,15 +311,6 @@ public class ItemBuilder {
     public ItemBuilder flag(List<ItemFlag> flags) {
         Validate.notNull(flags, "The Flags are null.");
         this.flags = flags;
-        return this;
-    }
-
-    /**
-     * Makes the ItemStack Glow like it had a Enchantment
-     */
-    public ItemBuilder glow() {
-        enchant(material != Material.BOW ? Enchantment.ARROW_INFINITE : Enchantment.LUCK, 10);
-        flag(ItemFlag.HIDE_ENCHANTS);
         return this;
     }
 

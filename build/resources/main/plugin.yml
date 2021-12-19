@@ -3,3 +3,18 @@ version: 1.0
 api-version: 1.18
 author: GeekLegend
 main: eu.raidersheaven.rhsignitem.RHSignItem
+permissions:
+  RHSignItem.*:
+    default: op
+  RHSignItem.sign:
+    default: false
+  RHSignItem.unsign:
+    default: false
+  RHSignItem.renameitem:
+    default: false
+  RHSignItem.reload:
+    default: op
+  RHSignItem.lockitem:
+    default: op
+  RHSignItem.unlockitem:
+    default: op

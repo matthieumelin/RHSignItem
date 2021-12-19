@@ -12,21 +12,28 @@ messages:
     no-permission: "%prefix% &7You don't have the permission for that."
     no-item-in-main-hand: "%prefix% &7You have no item in your hand."
     item-blacklisted: "%prefix% &7This item is blacklisted."
-    already-locked: '%prefix% &7This item is already locked by %player%'
-commands:
-  admin:
-    permission: 'RHSignItem.*'
-  sign:
-    permission: 'RHSignItem.sign'
-  unsign:
-    permission: 'RHSignItem.unsign'
-  reload:
-    permission: 'RHSignItem.reload'
-  lock:
-    permission: 'RHSignItem.lockitem'
-  unlock:
-    permission: 'RHSignItem.unlockitem'
-  renameitem:
-    permission: 'RHSignItem.renameitem'
+    item-unlocked: "%prefix% &7The item has been unlocked."
+    item-locked: '%prefix% &7The item has been locked.'
+    item-signed: '%prefix% &7The item has been signed.'
+    item-deleted: '%prefix% &7The signature has been removed.'
+    item-renamed: '%prefix% &7The item has been renamed.'
+    item-not-signed: '%prefix% &7This item is not signed.'
+    item-not-locked: '%prefix% &7This item is not locked.'
+    item-already-signed: '%prefix% &7This item is already signed by %player%'
+    item-already-locked: '%prefix% &7This item is already locked by %player%'
+    item-wrong-owner: '%prefix% &7You are not the owner of the item.'
+  blocked-lore: "%prefix% &7You can't sign this item, because it already contains a lore."
+
+sign:
+  content:
+    - ' '
+    - '%text%'
+    - ' '
+    - '&7Sign by &a&l%player% &7at &e&l%date%'
+    - ' '
+  date-format: 'dd.MM.yyyy'
+
+block-items-with-lore: false
+
 items-blacklist:
   - 'bedrock'
